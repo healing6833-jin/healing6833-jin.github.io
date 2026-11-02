@@ -1130,3 +1130,66 @@ document.addEventListener('click', e => {
   play();
 })();
 
+
+
+/* ---------- 대표 저서 (유페이퍼 전자책) ----------
+   책을 추가 · 수정하려면 BOOKS에 한 줄 넣고 표지를 img/books/번호.webp로 저장 */
+const BOOK_STORE = 'https://healing6833.upaper.kr/content/';
+const BOOK_AUTHOR = '국제실용아로마테라피학회 대표 · 맞춤형화장품조제관리사 · 대구보건대학교 전 임상교수. 『생애주기별 마인드힐링 아로마테라피』(공저)와 『인생 나침반』 시리즈를 썼습니다.';
+const BOOKS = [
+  { id:1224733, badge:'NEW', cat:'오행 · 별자리', price:18000, title:'인생 나침반: 시그널 3', sub:'오행 올인원 처방전 — 자아 · 진로 · 사랑 · 재물 · 건강',
+    file:'EPUB', pages:'', date:'2026. 10. 4', isbn:'9791144420427',
+    desc:'사주 오행과 서양 별자리, 아로마테라피를 하나로 엮은 『인생 나침반』 시리즈의 완결편입니다. 오행 기초와 자가 진단부터 자아 · 진로 · 사랑 · 재물 · 건강 다섯 영역에 어울리는 향의 활용까지 단계별로 안내합니다.' },
+  { id:1170211, badge:'BEST', cat:'타로 수비학', price:10000, title:'소울카드', sub:'타로 수비학으로 찾는 나만의 인생 타로카드',
+    file:'PDF', pages:'66쪽', date:'2024. 2. 24', isbn:'9791172187675',
+    desc:'태어난 날의 숫자로 나의 소울 카드(타로 메이저 아르카나)를 찾는 법을 알려 드립니다. 계산법부터 카드별 성향 풀이까지 담아, 나를 이해하는 또 하나의 열쇠가 되어 줍니다. 유페이퍼 서재에서 가장 많이 읽힌 책입니다.' },
+  { id:1179649, badge:'', cat:'별자리 · 아로마', price:10000, title:'인생 나침반: 시그널 1', sub:'별자리로 보는 자아 발견 — 향기 처방전',
+    file:'PDF', pages:'111쪽', date:'2024. 10. 11', isbn:'9791173251412',
+    desc:'열두 별자리의 성향을 MBTI처럼 쉽게 풀고, 별자리마다 어울리는 아로마 향을 짝지은 자기 이해 안내서입니다. 훼이맵 향기카드 20의 바탕이 된 이야기를 만날 수 있어요.' },
+  { id:1181769, badge:'', cat:'별자리 · 진로', price:11000, title:'인생 나침반: 시그널 2', sub:'진로 · 적성을 위한 점성학 활용법',
+    file:'PDF', pages:'125쪽', date:'2024. 11. 27', isbn:'9791173257414',
+    desc:'시그널 1이 나의 내면을 들여다보았다면, 시그널 2는 별자리의 흐름으로 나의 강점과 어울리는 일을 살펴봅니다. 진로를 고민하는 분과 그 곁의 부모님께 권합니다.' },
+  { id:1181756, badge:'', cat:'아로마 실용', price:15000, title:'실용 아로마 DIY 활용법', sub:'에센셜오일 기초부터 천연 화장품 만들기까지',
+    file:'PDF', pages:'116쪽', date:'2024. 11. 25', isbn:'9791173257322',
+    desc:'에센셜오일의 기초와 오일별 특징, 안전한 희석법, 집에서 만드는 천연 화장품 레시피까지 한 권에 담은 실용 교재입니다. 블렌딩 클래스의 기본 교재로도 씁니다.' },
+  { id:1181759, badge:'', cat:'펫 아로마', price:15000, title:'실용 펫 아로마 DIY 활용법', sub:'반려동물과 함께 쓰는 아로마 안내서',
+    file:'PDF', pages:'116쪽', date:'2024. 11. 25', isbn:'9791173257339',
+    desc:'반려동물과 함께 지내는 공간에서 에센셜오일을 고르는 법과 꼭 지켜야 할 안전 수칙, 직접 만드는 DIY 레시피를 정리했습니다. 반려동물에게 맞지 않는 오일도 함께 알려 드립니다.' },
+];
+const won = n => n.toLocaleString('ko-KR') + '원';
+(function renderBooks(){
+  const grid = $('#book-grid'); if (!grid) return;
+  grid.innerHTML = BOOKS.map(b => `
+    <article class="book reveal" data-book="${b.id}" role="button" tabindex="0" aria-label="${esc(b.title)} 자세히 보기">
+      <div class="book-cover">${b.badge ? `<span class="book-badge ${b.badge.toLowerCase()}">${b.badge}</span>` : ''}
+        <img src="img/books/${b.id}.webp" alt="${esc(b.title)} 표지" loading="lazy" width="420" height="599"></div>
+      <div class="book-body">
+        <span class="book-tag"><i>${esc(b.cat)} · </i>${won(b.price)}</span>
+        <h3>《${esc(b.title)}》</h3>
+        <p>${esc(b.sub)}</p>
+        <div class="book-foot"><span>자세히 보기 →</span><small>유페이퍼 · ${b.file}</small></div>
+      </div>
+    </article>`).join('');
+  grid.querySelectorAll('.reveal').forEach(el => { if (typeof io !== 'undefined') io.observe(el); else el.classList.add('in'); });
+  const open = id => {
+    const b = BOOKS.find(x => x.id === id);
+    const info = ['전자책 ' + b.file, b.pages, '출간 ' + b.date, 'ISBN ' + b.isbn].filter(Boolean).join(' · ');
+    $('#book-modal-body').innerHTML = `
+      <div class="book-detail">
+        <img class="book-detail-cover" src="img/books/${b.id}.webp" alt="${esc(b.title)} 표지" width="420" height="599">
+        <div>
+          <span class="book-tag">${esc(b.cat)} · 유페이퍼 출간 전자책</span>
+          <h3 id="book-title">《${esc(b.title)}》</h3>
+          <p class="book-sub">${esc(b.sub)}</p>
+          <p class="book-info">${esc(info)} · 정가 <b>${won(b.price)}</b></p>
+          <h4>책 소개</h4><p>${esc(b.desc)}</p>
+          <h4>지은이 조영진</h4><p>${esc(BOOK_AUTHOR)}</p>
+          <a class="btn btn-dark btn-block book-buy" href="${BOOK_STORE}${b.id}" target="_blank" rel="noopener">📖 유페이퍼에서 구매하기 (${won(b.price)})</a>
+          <p class="fine">구매하면 유페이퍼에서 바로 내려받아 읽을 수 있어요. 가격은 유페이퍼 판매 화면 기준입니다.</p>
+        </div>
+      </div>`;
+    $('#book-modal').showModal();
+  };
+  grid.addEventListener('click', e => { const c = e.target.closest('[data-book]'); if (c) open(Number(c.dataset.book)); });
+  grid.addEventListener('keydown', e => { const c = e.target.closest('[data-book]'); if (c && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); open(Number(c.dataset.book)); } });
+})();
