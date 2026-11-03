@@ -672,3 +672,8 @@ textarea{ resize:vertical; }
 }
 .book-tag i{ font-style:normal; }
 @media (max-width:560px){ .book .book-tag i{ display:none; } }
+/* 리포트 정보: 성별 */
+.report-fields .gender{ display:flex; gap:22px; align-items:center; border:0; padding:0; margin:0; }
+.report-fields .gender legend{ float:left; margin-right:8px; font-size:13.5px; font-weight:500; color:var(--muted); padding:0; }
+.report-fields .gender legend b{ color:var(--fire); }
+.report-fields .gender input{ accent-color:var(--navy); width:16px; height:16px; }

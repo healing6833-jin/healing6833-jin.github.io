@@ -945,7 +945,7 @@ document.addEventListener('click', e => {
 function summaryText(fd){
   const lines = [`성함: ${fd.get('name')}`, `연락처: ${fd.get('tel')}`, `프로그램: ${fd.get('program')}`, `희망 날짜: ${fd.get('date') || '미정'}`];
   if (fd.get('program') === '정식 오행 사주 리포트'){
-    lines.push(`생년월일: ${fd.get('birth') || '-'} (${fd.get('calendar')})`, `태어난 시간: ${fd.get('time_unknown') ? '모름' : (fd.get('birth_time') || '-')}`, `출생지: ${fd.get('birth_place') || '-'}`);
+    lines.push(`성별: ${fd.get('gender') || '-'}`, `생년월일: ${fd.get('birth') || '-'} (${fd.get('calendar')})`, `태어난 시간: ${fd.get('time_unknown') ? '모름' : (fd.get('birth_time') || '-')}`, `출생지: ${fd.get('birth_place') || '-'}`);
   }
   lines.push('', '요청사항:', (fd.get('message') || '-').trim());
   return lines.join('\n');
@@ -960,6 +960,7 @@ form.addEventListener('submit', async e => {
   form.tel.classList.toggle('is-invalid', !telOk);
   if (!name){ err.textContent = '성함을 입력해 주세요.'; form.name.focus(); return; }
   if (!telOk){ err.textContent = '연락처를 올바르게 입력해 주세요.'; form.tel.focus(); return; }
+  if (programSel.value === '정식 오행 사주 리포트' && !form.querySelector('[name=gender]:checked')){ err.textContent = '사주 풀이에 꼭 필요해요. 성별을 골라 주세요.'; return; }
   if (!form.agree.checked){ err.textContent = '개인정보 수집·이용에 동의해 주세요.'; return; }
   err.textContent = '';
 
