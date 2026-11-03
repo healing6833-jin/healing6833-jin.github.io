@@ -446,13 +446,13 @@
       </label>
       <label>희망 날짜<input type="date" name="date"></label>
 
-      <fieldset class="report-fields full" id="report-fields" hidden>
-        <legend>리포트 정보</legend>
+      <fieldset class="report-fields full" id="report-fields">
+        <legend>맞춤 상담 정보</legend>
         <fieldset class="gender full"><legend>성별 <b>*</b></legend>
           <label class="check"><input type="radio" name="gender" value="여성"> 여성</label>
           <label class="check"><input type="radio" name="gender" value="남성"> 남성</label>
         </fieldset>
-        <label>생년월일<input type="date" name="birth"></label>
+        <label><span>생년월일 <b>*</b></span><input type="date" name="birth" required></label>
         <label>달력<select name="calendar"><option>양력</option><option>음력</option></select></label>
         <label>태어난 시간<input type="time" name="birth_time"></label>
         <label>출생지<input type="text" name="birth_place" placeholder="예: 대구광역시"></label>

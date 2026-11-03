@@ -762,7 +762,8 @@ $('#year').textContent = new Date().getFullYear();
 /* ---------- 예약 문의 ---------- */
 const form = $('#contact-form');
 const programSel = $('#contact-program');
-function syncReportFields(){ $('#report-fields').hidden = programSel.value !== '정식 오행 사주 리포트'; }
+// 맞춤형 상담이라 성별 · 생년월일은 모든 문의에 받음 (탈리 폼과 같은 기준)
+function syncReportFields(){ $('#report-fields').hidden = false; }
 programSel.addEventListener('change', syncReportFields);
 
 // 탈리 폼 넣기: 숨은 칸(program, note)에 체험 결과를 담아 전달
@@ -944,7 +945,7 @@ document.addEventListener('click', e => {
 
 function summaryText(fd){
   const lines = [`성함: ${fd.get('name')}`, `연락처: ${fd.get('tel')}`, `프로그램: ${fd.get('program')}`, `희망 날짜: ${fd.get('date') || '미정'}`];
-  if (fd.get('program') === '정식 오행 사주 리포트'){
+  {
     lines.push(`성별: ${fd.get('gender') || '-'}`, `생년월일: ${fd.get('birth') || '-'} (${fd.get('calendar')})`, `태어난 시간: ${fd.get('time_unknown') ? '모름' : (fd.get('birth_time') || '-')}`, `출생지: ${fd.get('birth_place') || '-'}`);
   }
   lines.push('', '요청사항:', (fd.get('message') || '-').trim());
@@ -960,7 +961,8 @@ form.addEventListener('submit', async e => {
   form.tel.classList.toggle('is-invalid', !telOk);
   if (!name){ err.textContent = '성함을 입력해 주세요.'; form.name.focus(); return; }
   if (!telOk){ err.textContent = '연락처를 올바르게 입력해 주세요.'; form.tel.focus(); return; }
-  if (programSel.value === '정식 오행 사주 리포트' && !form.querySelector('[name=gender]:checked')){ err.textContent = '사주 풀이에 꼭 필요해요. 성별을 골라 주세요.'; return; }
+  if (!form.querySelector('[name=gender]:checked')){ err.textContent = '맞춤 상담을 위해 성별을 골라 주세요.'; return; }
+  if (!form.birth.value){ err.textContent = '맞춤 상담을 위해 생년월일을 입력해 주세요.'; form.birth.focus(); return; }
   if (!form.agree.checked){ err.textContent = '개인정보 수집·이용에 동의해 주세요.'; return; }
   err.textContent = '';
 
