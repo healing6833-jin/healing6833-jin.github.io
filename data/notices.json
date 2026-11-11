@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "items": [
     {
       "category": "지원사업",
@@ -110,6 +110,26 @@
       "reason": "국내 거주 기업이면 신청 가능하나, 웰니스 제품·교육 중심이라 전시 콘텐츠 적합성 확인 필요",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127791",
       "added": "2026-11-10"
+    },
+    {
+      "category": "지원사업",
+      "title": "[경북] 2027년 K-뷰티산업 국내외 마케팅 지원사업(코스모프로프 볼로냐) 모집 공고",
+      "org": "경상북도 / 경북IT융합산업기술원",
+      "deadline": "2026-11-24",
+      "fit": "중",
+      "reason": "경북 소재 1인 기업이며 화장품·바디케어 전시가 맞지만, 화장품 제조사 해당 여부 확인이 필요함",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127857",
+      "added": "2026-11-12"
+    },
+    {
+      "category": "지원사업",
+      "title": "2026년 소상공인 법률ㆍ노무 현장 상담 지원사업 모집 공고",
+      "org": "중소벤처기업부 / 소상공인연합회",
+      "deadline": "",
+      "fit": "중",
+      "reason": "1인 소상공인이면 신청 가능하나 노무·법률 상담 중심이라 제품·교육 사업과 직접 연관은 낮음",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127845",
+      "added": "2026-11-12"
     }
   ]
 }
