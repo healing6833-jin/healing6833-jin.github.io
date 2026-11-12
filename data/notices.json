@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "items": [
     {
       "category": "지원사업",
@@ -30,16 +30,6 @@
       "reason": "경북 경산 소재 소상공인으로 제품 직접 제조가 가능하고 웰니스 제품 판로 확대에 직접 부합",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127508",
       "added": "2026-10-29"
-    },
-    {
-      "category": "지원사업",
-      "title": "2026년 전남광주 제3기 지역자원 연계 청년창업 지원사업 모집 연장 공고",
-      "org": "전남광주통합특별시 / 전남정보문화산업진흥원",
-      "deadline": "2026-11-12",
-      "fit": "중",
-      "reason": "청년·창업예정 요건은 맞을 수 있으나 전남광주 소재 이전 등 지역 조건 확인이 필요함",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127616",
-      "added": "2026-11-03"
     },
     {
       "category": "지원사업",
@@ -130,6 +120,16 @@
       "reason": "1인 소상공인이면 신청 가능하나 노무·법률 상담 중심이라 제품·교육 사업과 직접 연관은 낮음",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127845",
       "added": "2026-11-12"
+    },
+    {
+      "category": "지원사업",
+      "title": "[경북] 2026년 2차 경북세일페스타 유통사 입점 마케팅 데이 참여기업 모집 공고",
+      "org": "경상북도 / 경상북도경제진흥원",
+      "deadline": "2026-12-02",
+      "fit": "상",
+      "reason": "경북 소재 중소기업·소상공인 대상이며, 웰니스 제품 판매 기업이 온라인 유통 MD 1:1 상담으로 입점·판로를 모색할 수 있어 직접 부합함",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127875",
+      "added": "2026-11-13"
     }
   ]
 }
