@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "items": [
     {
       "category": "지원사업",
@@ -19,16 +19,6 @@
       "fit": "중",
       "reason": "대상은 바이오 생체활성제품 활용 영리기업이며 해외마케팅 지원은 유용하나, 바이오 소재 활용 여부와 기술지원 요건 확인이 필요함",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127513",
-      "added": "2026-10-29"
-    },
-    {
-      "category": "지원사업",
-      "title": "[경북] 2026년 K-통합 마케팅 생태계 조성 사업 오프라인 특판전(롯데백화점(인천점)) 참가기업 모집 공고",
-      "org": "경상북도 / 경상북도경제진흥원",
-      "deadline": "2026-11-13",
-      "fit": "상",
-      "reason": "경북 경산 소재 소상공인으로 제품 직접 제조가 가능하고 웰니스 제품 판로 확대에 직접 부합",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127508",
       "added": "2026-10-29"
     },
     {
@@ -130,6 +120,16 @@
       "reason": "경북 소재 중소기업·소상공인 대상이며, 웰니스 제품 판매 기업이 온라인 유통 MD 1:1 상담으로 입점·판로를 모색할 수 있어 직접 부합함",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127875",
       "added": "2026-11-13"
+    },
+    {
+      "category": "지원사업",
+      "title": "2027년 농촌창업 경진대회 참여자 모집 공고",
+      "org": "농림축산식품부 / 한국농어촌공사",
+      "deadline": "2026-12-10",
+      "fit": "중",
+      "reason": "창업 경진 취지와 웰니스·체험 사업은 맞으나, 농촌 기반 여부와 업력 7년 이내 조건 확인이 필요함",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127906",
+      "added": "2026-11-14"
     }
   ]
 }
