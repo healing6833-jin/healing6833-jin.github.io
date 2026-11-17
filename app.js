@@ -13,6 +13,8 @@ const SITE = {
   tallyId: 'q5ZJ2Y',
   // 상담 시간 예약 — Make 웹훅 주소 (https://hook.○○.make.com/…). 채우면 문의 칸 위에 '시간 예약'이 생깁니다.
   bookingHook: '',
+  // 아로마 뉴스 — 뉴스레터 Apps Script(뉴스수집자동화) 웹 앱 주소. 비우면 인스타·블로그·스레드 바로가기가 대신 보입니다.
+  newsFeed: 'https://script.google.com/macros/s/AKfycbzBg8AgURW4m3AnwUWNW5bINHGceSbAYTkSAFhFc-4WwbLvT6hxucZVx8QncfMu4qa_/exec',
   // 요일(0=일 … 6=토) · 시작~끝 시각 · 1회 길이(분) · 며칠 앞까지 · 최소 몇 시간 전까지 받을지
   booking: { days:[1,2,3,4,5], open:10, close:18, minutes:60, aheadDays:21, leadHours:12,
     programs:['1:1 오행·별자리 아로마 컨설팅', '아로마 케어', '나만의 블렌딩 클래스'] },
@@ -1195,4 +1197,56 @@ const won = n => n.toLocaleString('ko-KR') + '원';
   };
   grid.addEventListener('click', e => { const c = e.target.closest('[data-book]'); if (c) open(Number(c.dataset.book)); });
   grid.addEventListener('keydown', e => { const c = e.target.closest('[data-book]'); if (c && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); open(Number(c.dataset.book)); } });
+})();
+
+/* ---------- 기업·기관 출강 카드뉴스 슬라이더 ---------- */
+(function initTeamsSlider(){
+  const track = $('#ts-track'); if (!track) return;
+  const slides = $$('.ts-slide', track), dots = $('#ts-dots'), prev = $('#ts-prev'), next = $('#ts-next');
+  dots.innerHTML = slides.map((_, i) => `<button type="button" aria-label="${i + 1}번째 카드"></button>`).join('');
+  const dotBtns = $$('button', dots);
+  const current = () => Math.round(track.scrollLeft / track.clientWidth);
+  const go = i => track.scrollTo({left: Math.max(0, Math.min(slides.length - 1, i)) * track.clientWidth});
+  const sync = () => {
+    const i = current();
+    dotBtns.forEach((b, k) => b.setAttribute('aria-current', String(k === i)));
+    prev.disabled = i === 0; next.disabled = i === slides.length - 1;
+  };
+  prev.addEventListener('click', () => go(current() - 1));
+  next.addEventListener('click', () => go(current() + 1));
+  dotBtns.forEach((b, k) => b.addEventListener('click', () => go(k)));
+  track.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight'){ e.preventDefault(); go(current() + 1); }
+    if (e.key === 'ArrowLeft'){ e.preventDefault(); go(current() - 1); }
+  });
+  let t; track.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(sync, 60); }, {passive:true});
+  window.addEventListener('resize', () => go(current()));
+  sync();
+})();
+
+/* ---------- 아로마 뉴스 (뉴스레터 Apps Script 웹 앱에서 최근 기사 받아오기) ---------- */
+// 받는 형식: {"items":[{"date":"2026-11-17T08:00:00+09:00","title":"…","titleKo":"…","source":"…","region":"미국","link":"https://…"}]}
+(async function initNews(){
+  // 주소가 없거나 불러오지 못하면 HTML에 적어 둔 인스타·블로그·스레드 바로가기를 그대로 보여 줍니다
+  const list = $('#news-list');
+  if (!list || !SITE.newsFeed) return;
+  try {
+    const res = await fetch(`${SITE.newsFeed}${SITE.newsFeed.includes('?') ? '&' : '?'}format=json`);
+    const data = await res.json();
+    const items = (data.items || []).filter(a => a && a.title && /^https?:\/\//.test(a.link)).slice(0, 3);
+    if (!items.length) return;
+    const attr = s => esc(s).replace(/"/g, '&quot;');
+    const day = d => { const x = new Date(d); return isNaN(x) ? '' : `${x.getMonth() + 1}.${x.getDate()}`; };
+    list.innerHTML = items.map(a => {
+      const ko = a.titleKo && a.titleKo !== a.title ? a.titleKo : '';
+      const meta = [a.region, a.source, day(a.date)].filter(Boolean).map(esc).join(' · ');
+      return `<li><a href="${attr(a.link)}" target="_blank" rel="noopener nofollow">
+        <span class="news-meta">${meta}</span>
+        <b>${esc(ko || a.title)}</b>
+        ${ko ? `<span class="news-en" lang="en">${esc(a.title)}</span>` : ''}
+      </a></li>`;
+    }).join('');
+    const foot = $('#news-foot');
+    if (foot) foot.textContent = '제목은 자동 번역이며, 기사 내용과 저작권은 각 언론사에 있습니다.';
+  } catch (_) { /* 바로가기 그대로 둠 */ }
 })();

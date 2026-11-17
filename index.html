@@ -53,6 +53,7 @@
       <a href="#experience">무료 체험</a>
       <a href="#atlas">향의 지도</a>
       <a href="#programs">상담·클래스</a>
+      <a href="#teams">기관 출강</a>
       <a href="#books">저서</a>
       <a href="#store">제품</a>
       <a href="#faq">FAQ</a>
@@ -111,21 +112,55 @@
       <h2>세 갈래의 오래된 지혜를<br>한 병의 향으로</h2>
       <p class="lede">향의 지혜, 별의 언어, 오행의 균형. 수천 년을 이어 온 세 가지 시선으로 지금의 나를 들여다보고, 그 사람에게 꼭 맞는 향을 찾아 드리는 아로마 브랜드입니다.</p>
     </header>
-    <div class="pillars">
-      <article class="pillar reveal">
-        <span class="pillar-no">Ⅰ</span>
-        <h3>아로마테라피</h3>
-        <p>고대 이집트에서부터 사람들은 향으로 몸과 마음을 돌봐 왔습니다. 식물에서 얻은 싱글 에센셜오일 20가지로 그 오랜 지혜를 오늘의 하루에 옮깁니다.</p>
+    <div class="trio">
+      <!-- 1. 세 갈래의 지혜 -->
+      <article class="trio-card trio-wisdom reveal">
+        <p class="trio-label">THREE WISDOMS</p>
+        <div class="pillar">
+          <span class="pillar-no">Ⅰ</span>
+          <h3>아로마테라피</h3>
+          <p>고대 이집트에서부터 사람들은 향으로 몸과 마음을 돌봐 왔습니다. 식물에서 얻은 싱글 에센셜오일 20가지로 그 오랜 지혜를 오늘의 하루에 옮깁니다.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-no">Ⅱ</span>
+          <h3>서양 점성학</h3>
+          <p>메소포타미아에서 체계화된 별의 언어. 12별자리와 8행성의 상징을 20가지 향과 하나씩 짝지었습니다.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-no">Ⅲ</span>
+          <h3>사주 · 음양오행</h3>
+          <p>목·화·토·금·수 다섯 기운의 균형으로 지금의 나를 읽는 동양의 시선. 1:1 컨설팅의 바탕이 됩니다.</p>
+        </div>
       </article>
-      <article class="pillar reveal">
-        <span class="pillar-no">Ⅱ</span>
-        <h3>서양 점성학</h3>
-        <p>메소포타미아에서 체계화된 별의 언어. 12별자리와 8행성의 상징을 20가지 향과 하나씩 짝지었습니다.</p>
+
+      <!-- 2. 아로마 뉴스: app.js의 SITE.newsFeed 주소를 채우면 최근 기사로 바뀝니다 -->
+      <article class="trio-card trio-news reveal" id="news">
+        <p class="trio-label">AROMA NEWS</p>
+        <h3>오늘의 세계<br>아로마테라피 소식</h3>
+        <ul class="trio-news-list" id="news-list" aria-live="polite">
+          <li class="news-fallback"><a href="https://www.instagram.com/joyhealing6833/" target="_blank" rel="noopener"><span class="news-meta">INSTAGRAM</span><b>매일 아침 8시, 오늘의 향과 별 이야기</b></a></li>
+          <li class="news-fallback"><a href="https://blog.naver.com/healing6833" target="_blank" rel="noopener"><span class="news-meta">BLOG</span><b>오일별 사용법과 블렌딩 레시피</b></a></li>
+          <li class="news-fallback"><a href="https://www.threads.com/@joyhealing6833" target="_blank" rel="noopener"><span class="news-meta">THREADS</span><b>짧게 읽는 향기 한 줄</b></a></li>
+        </ul>
+        <p class="trio-foot" id="news-foot">해외 아로마테라피 뉴스를 매일 아침 모아 한국어 제목으로 소개합니다.</p>
       </article>
-      <article class="pillar reveal">
-        <span class="pillar-no">Ⅲ</span>
-        <h3>사주 · 음양오행</h3>
-        <p>목·화·토·금·수 다섯 기운의 균형으로 지금의 나를 읽는 동양의 시선. 1:1 컨설팅의 바탕이 됩니다.</p>
+
+      <!-- 3. 기업·기관 출강 카드뉴스 -->
+      <article class="trio-card trio-teams reveal" id="teams" aria-roledescription="carousel" aria-label="기업·기관 출강 안내 카드뉴스">
+        <div class="ts-track" id="ts-track" tabindex="0">
+          <figure class="ts-slide"><img src="img/teams/chulgang-01-s.webp" srcset="img/teams/chulgang-01-s.webp 540w, img/teams/chulgang-01.webp 1080w" sizes="(max-width:860px) 88vw, 360px" width="1080" height="1350" alt="1/6 기업·기관 출강 — 향으로 쉬어 가는 1시간, 우리 회사로 찾아갑니다"></figure>
+          <figure class="ts-slide"><img src="img/teams/chulgang-02-s.webp" srcset="img/teams/chulgang-02-s.webp 540w, img/teams/chulgang-02.webp 1080w" sizes="(max-width:860px) 88vw, 360px" width="1080" height="1350" loading="lazy" alt="2/6 이런 곳에 찾아갑니다 — 기업 임직원 힐링데이, 공공기관·복지관, 학교·평생교육원·도서관"></figure>
+          <figure class="ts-slide"><img src="img/teams/chulgang-03-s.webp" srcset="img/teams/chulgang-03-s.webp 540w, img/teams/chulgang-03.webp 1080w" sizes="(max-width:860px) 88vw, 360px" width="1080" height="1350" loading="lazy" alt="3/6 나만의 블렌딩 클래스 — 향기카드 3장으로 고르고 직접 섞어 가져갑니다. 약 60분, 재료 일체 준비"></figure>
+          <figure class="ts-slide"><img src="img/teams/chulgang-04-s.webp" srcset="img/teams/chulgang-04-s.webp 540w, img/teams/chulgang-04.webp 1080w" sizes="(max-width:860px) 88vw, 360px" width="1080" height="1350" loading="lazy" alt="4/6 오행·별자리로 읽는 우리 팀의 향 — 서로 다른 기질을 향으로 이해하는 특강·워크숍"></figure>
+          <figure class="ts-slide"><img src="img/teams/chulgang-05-s.webp" srcset="img/teams/chulgang-05-s.webp 540w, img/teams/chulgang-05.webp 1080w" sizes="(max-width:860px) 88vw, 360px" width="1080" height="1350" loading="lazy" alt="5/6 2008년부터 향을 공부해 온 대표가 직접 진행합니다 — 맞춤형화장품조제관리사, 미용사(피부), 아로마테라피전문가 1급"></figure>
+          <figure class="ts-slide"><img src="img/teams/chulgang-06-s.webp" srcset="img/teams/chulgang-06-s.webp 540w, img/teams/chulgang-06.webp 1080w" sizes="(max-width:860px) 88vw, 360px" width="1080" height="1350" loading="lazy" alt="6/6 출강 문의 진행 순서 — 문의 남기기, 맞춤 구성 안내, 일정 확정, 현장 진행"></figure>
+        </div>
+        <div class="ts-controls">
+          <button type="button" class="ts-arrow" id="ts-prev" aria-label="이전 카드">←</button>
+          <div class="ts-dots" id="ts-dots"></div>
+          <button type="button" class="ts-arrow" id="ts-next" aria-label="다음 카드">→</button>
+        </div>
+        <a class="btn btn-gold btn-block" href="#contact" data-prefill="기업·기관 출강" data-note="[기업·기관 출강 문의] 기관명 / 예상 인원 / 희망 날짜 / 장소를 함께 적어 주세요.">기업·기관 출강 문의</a>
       </article>
     </div>
 
