@@ -154,6 +154,7 @@ function getCrmData() {
     tallyUrl: String(setting_(SET_URL).value || ''),
     lastImport: last instanceof Date ? Utilities.formatDate(last, tz, 'yyyy-MM-dd HH:mm') : '',
     autoImport: hasAutoTrigger_(),
+    telegram: telegramStatus_(),
     today: today_()
   };
 }
@@ -334,6 +335,7 @@ function importTally() {
     rows.forEach(function (r, i) { const k = phoneKey_(r[CI.tel]); if (k) byPhone[k] = i; });
 
     const newInq = [];
+    const alerts = [];
     let newCust = 0;
     values.slice(1).forEach(function (r) {
       const id = text(r, col.id);
@@ -354,6 +356,7 @@ function importTally() {
       const key = phoneKey_(tel);
       let i = key && byPhone[key] !== undefined ? byPhone[key] : -1;
       let c;
+      const isNew = i < 0;
       if (i < 0) {
         c = CUST_HEAD.map(function () { return ''; });
         c[CI.id] = nextCustId_(rows);
@@ -384,6 +387,9 @@ function importTally() {
 
       newInq.push([id, when, c[CI.id], name, phoneFmt_(tel), text(r, col.program) || text(r, col.hiddenProgram),
         text(r, col.wish), text(r, col.msg), text(r, col.note), '새 문의']);
+      const last = newInq[newInq.length - 1];
+      alerts.push({ name: name, tel: last[4], program: last[5], wish: last[6], msg: last[7], note: last[8],
+        sign: c[CI.sign], oil: c[CI.oil], kw: c[CI.kw], cust: c[CI.id], isNew: isNew, at: when });
     });
 
     if (rows.length) sh.getRange(2, 1, rows.length, CUST_HEAD.length).setValues(rows);
@@ -392,6 +398,8 @@ function importTally() {
       q.getRange(q.getLastRow() + 1, 1, newInq.length, INQ_HEAD.length).setValues(newInq);
     }
     setting_(SET_LAST).cell.setValue(new Date());
+    alerts.sort(function (a, b) { return a.at - b.at; });
+    notifyNewInquiries_(alerts); // Telegram.gs — 텔레그램이 연결돼 있을 때만 보냅니다.
     return { added: newInq.length, newCustomers: newCust };
   });
 }

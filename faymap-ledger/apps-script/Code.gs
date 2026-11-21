@@ -29,6 +29,8 @@ function onOpen() {
     .addSeparator()
     .addItem('고객관리 시트 만들기', 'setupCrm')
     .addItem('탈리 문의 지금 가져오기', 'importTally')
+    .addSeparator()
+    .addItem('텔레그램 시험 알림 보내기', 'testTelegram')
     .addToUi();
 }
 
