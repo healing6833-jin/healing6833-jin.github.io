@@ -35,7 +35,7 @@ const LINKS = {
   blog: 'https://blog.naver.com/healing6833',
   // 카카오톡 채널 공개 주소 (예: https://pf.kakao.com/_xxxxx) — 손님이 누르면 채널 추가 · 채팅으로 연결
   kakao: 'https://pf.kakao.com/_MCiNxj/chat',
-  youtube: 'https://www.youtube.com/@%ED%96%A5%EA%B8%B0%EC%B9%98%EC%9C%A0%EC%A0%95%EC%9B%90%ED%9B%BC%EC%9D%B4%EB%A7%B5Fat',
+  youtube: 'https://www.youtube.com/@FateMap-k',
 };
 
 // 오일별 구입 주소 — 카드 번호: '주소' 로 넣으면 그 카드만 해당 상품으로 연결 (비어 있으면 LINKS.buy)
