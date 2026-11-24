@@ -1,1 +1,1 @@
-{ "name": "ohaeng-calendar", "private": true, "type": "module", "dependencies": { "@resvg/resvg-wasm": "2.6.2" } }
+{"name":"ohaeng-calendar","private":true,"type":"module","dependencies":{"@resvg/resvg-wasm":"2.6.2","korean-lunar-calendar":"^0.3.6"}}
