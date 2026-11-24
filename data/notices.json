@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "items": [
     {
       "category": "지원사업",
@@ -40,16 +40,6 @@
       "reason": "경산은 대구가 아닌 경북이라 대구 내 사업장 요건을 충족하지 못할 가능성이 큼; 소상공인 자금은 해당되나 지역 조건 확인 필요",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127748",
       "added": "2026-11-07"
-    },
-    {
-      "category": "지원사업",
-      "title": "[경북] 2027년 K-뷰티산업 국내외 마케팅 지원사업(코스모프로프 볼로냐) 모집 공고",
-      "org": "경상북도 / 경북IT융합산업기술원",
-      "deadline": "2026-11-24",
-      "fit": "중",
-      "reason": "경북 소재 1인 기업이며 화장품·바디케어 전시가 맞지만, 화장품 제조사 해당 여부 확인이 필요함",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127857",
-      "added": "2026-11-12"
     },
     {
       "category": "지원사업",
@@ -100,6 +90,36 @@
       "reason": "장애인기업확인서 보유가 필수라 자격 여부를 먼저 확인해야 하며, 전시회 참가비 지원은 사업과 직접 맞음",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000127994",
       "added": "2026-11-19"
+    },
+    {
+      "category": "지원사업",
+      "title": "2026년 2차 해외 온라인 플랫폼 판로지원 사업 참여 소상공인 통합 공고",
+      "org": "중소벤처기업부 / 소상공인시장진흥공단",
+      "deadline": "2026-12-08",
+      "fit": "상",
+      "reason": "1인 소상공인으로 웰니스 제품을 판매하며 해외 온라인 판로·수출 지원이 직접 맞음",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000128092",
+      "added": "2026-11-25"
+    },
+    {
+      "category": "지원사업",
+      "title": "2026년 중소벤처기업부 소상공인 정책자금 융자사업 변경 공고",
+      "org": "중소벤처기업부 / 소상공인시장진흥공단",
+      "deadline": "",
+      "fit": "중",
+      "reason": "소상공인 자격은 해당 가능하나 세부사업별 지원대상과 조건 확인이 필요하며, 홈플러스 피해 우대는 해당 없음",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000128098",
+      "added": "2026-11-25"
+    },
+    {
+      "category": "지원사업",
+      "title": "2026년 3차 포텐셜 씨드(Potential Seed) 경작형 프로그램 참여기업 모집 공고",
+      "org": "중소벤처기업부 / 울산창조경제혁신센터",
+      "deadline": "2026-12-11",
+      "fit": "중",
+      "reason": "지역 무관 5년 이내 창업기업 대상이나 업력·투자이력 확인 필요, 아로마 웰니스 사업과 투자 연계는 간접적",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000128084",
+      "added": "2026-11-25"
     }
   ]
 }
