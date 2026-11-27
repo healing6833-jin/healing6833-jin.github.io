@@ -42,5 +42,7 @@ main>.workbench:first-child{margin-top:28px}@media(max-width:660px){main>.workbe
 .lotto-title .lb3{background:radial-gradient(circle at 32% 28%,#e3e3e3,#9a9a9a 55%,#6b6b6b)}
 .lotto-title .lb4{background:radial-gradient(circle at 32% 28%,#c4f0b5,#5cbf4a 55%,#3a8f2c)}
 .lotto-title .lb-gap{width:calc(var(--b)*.18);flex-shrink:0}
-/* 아주 좁은 휴대폰: 상단 메뉴 숨김(왼쪽 위 문구와 겹침 방지) */
-@media(max-width:360px){.site-head nav{display:none}}
+/* 상단: 아이콘 + 홈페이지 바로가기만, 메뉴와 겹치지 않게 (2026-11-27) */
+.head-inner{flex-wrap:nowrap}.brand{flex-shrink:0}.site-head nav{min-width:0}
+@media(max-width:660px){.brand-text{flex-direction:row}.home-go{font-size:11.5px;padding:4px 10px;white-space:nowrap}}
+@media(max-width:360px){.site-head nav{gap:8px}.site-head nav a{font-size:11px}.home-go{font-size:11px;padding:3px 8px}}
