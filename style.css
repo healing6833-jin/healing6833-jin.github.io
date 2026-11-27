@@ -168,6 +168,7 @@ body{ top:0 !important; }
 .lotto-title .lb4{ background:radial-gradient(circle at 32% 28%,#c4f0b5,#5cbf4a 55%,#3a8f2c); }
 .lotto-title .lb-gap{ width:14px; }
 @media (max-width:860px){ .lotto-title > span{ gap:6px; } .lotto-title .lb{ width:42px; height:42px; font-size:19px; } .lotto-title .lb-gap{ width:6px; } }
+@media (max-width:400px){ .lotto-title > span{ flex-wrap:nowrap; gap:5px; } .lotto-title .lb{ width:36px; height:36px; font-size:16px; } .lotto-title .lb-gap{ width:4px; } }
 .lucky-row{ margin-top:28px; display:grid; grid-template-columns:minmax(0,1fr) 240px; gap:20px; align-items:stretch; }
 .lucky-row .method{ margin-top:0; }
 .lucky-qr{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:24px 20px; border-radius:24px; background:var(--navy); color:var(--navy-ink); text-decoration:none; text-align:center; }
