@@ -28,3 +28,5 @@ section[id]{scroll-margin-top:16px}h1,h2,h3{text-wrap:balance;letter-spacing:nor
 /* 상단 홈페이지 바로가기 (2026-11-27) */
 .brand-text{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap}.home-go{padding:4px 12px;border-radius:99px;background:linear-gradient(135deg,#f6dc93,#d9a93f);color:#2a1f0c;font-size:13px;font-weight:800;letter-spacing:0;transition:transform .2s,box-shadow .2s}.brand:hover .home-go{transform:translateX(2px);box-shadow:0 4px 14px #d9a93f55}
 @media(max-width:660px){.brand-text{flex-direction:column;align-items:flex-start;gap:3px;line-height:1.2}.home-go{font-size:11px;padding:3px 9px}}
+/* 운세 뽑기 칸을 첫 화면으로 (2026-11-27) */
+main>.workbench:first-child{margin-top:28px}@media(max-width:660px){main>.workbench:first-child{margin-top:16px}}
