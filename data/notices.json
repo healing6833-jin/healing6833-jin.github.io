@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27",
+  "updated": "2026-11-28",
   "items": [
     {
       "category": "지원사업",
@@ -130,6 +130,16 @@
       "reason": "소상공인 자격은 가능하나 임산물 소득원 품목을 원료로 쓰는지 확인 필요",
       "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000128109",
       "added": "2026-11-26"
+    },
+    {
+      "category": "지원사업",
+      "title": "[대구] 2026년 3차년도 대구한의대학교 글로컬대학 Start-up with local 프로젝트 모집 공고",
+      "org": "대구광역시 / 대구한의대학교",
+      "deadline": "2026-12-02",
+      "fit": "중",
+      "reason": "K-MEDI 분야에 화장품·천연소재가 포함되고 지역자원 활용 취지가 맞지만, 대구 사업장 요건과 창업 7년 미만 등 자격 확인이 필요함",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000128170",
+      "added": "2026-11-28"
     }
   ]
 }
