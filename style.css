@@ -157,6 +157,24 @@ body{ top:0 !important; }
 .lucky-balls span{ width:48px; height:48px; border-radius:50%; display:grid; place-items:center; font-family:var(--serif); font-size:18px; font-weight:700; color:#1D2147; background:radial-gradient(circle at 35% 30%,#F6E7BF,#D9BC7A 55%,#B08D4C); box-shadow:0 6px 16px rgba(176,141,76,.35); }
 .lucky .btn-block{ max-width:340px; }
 .lucky-note{ margin:0; font-size:13px; color:#BDB7D0; }
+/* 08 제목: 로또공 글자 */
+.lotto-title > span{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; }
+.lotto-title .lb{ width:64px; height:64px; border-radius:50%; display:grid; place-items:center; font-family:var(--sans,inherit); font-size:28px; font-weight:800; line-height:1; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.35); box-shadow:inset -6px -8px 14px rgba(0,0,0,.22), inset 6px 6px 12px rgba(255,255,255,.45), 0 6px 14px rgba(0,0,0,.18); }
+.lotto-title .lb::before{ content:none; }
+.lotto-title .lb0{ background:radial-gradient(circle at 32% 28%,#fff3b0,#f6c533 55%,#d79a0e); color:#5a3d00; text-shadow:none; }
+.lotto-title .lb1{ background:radial-gradient(circle at 32% 28%,#b9dcff,#4a90e2 55%,#2563b8); }
+.lotto-title .lb2{ background:radial-gradient(circle at 32% 28%,#ffb3b3,#e94b4b 55%,#b92a2a); }
+.lotto-title .lb3{ background:radial-gradient(circle at 32% 28%,#e3e3e3,#9a9a9a 55%,#6b6b6b); }
+.lotto-title .lb4{ background:radial-gradient(circle at 32% 28%,#c4f0b5,#5cbf4a 55%,#3a8f2c); }
+.lotto-title .lb-gap{ width:14px; }
+@media (max-width:860px){ .lotto-title > span{ gap:6px; } .lotto-title .lb{ width:42px; height:42px; font-size:19px; } .lotto-title .lb-gap{ width:6px; } }
+.lucky-row{ margin-top:28px; display:grid; grid-template-columns:minmax(0,1fr) 240px; gap:20px; align-items:stretch; }
+.lucky-row .method{ margin-top:0; }
+.lucky-qr{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:24px 20px; border-radius:24px; background:var(--navy); color:var(--navy-ink); text-decoration:none; text-align:center; }
+.lucky-qr img{ width:100%; max-width:170px; height:auto; border-radius:12px; background:#fff; padding:8px; margin-bottom:8px; box-shadow:0 8px 20px rgba(0,0,0,.25); }
+.lucky-qr b{ font-family:var(--serif); color:var(--gold-soft); font-size:16px; }
+.lucky-qr span{ font-size:13px; color:#BDB7D0; }
+@media (max-width:860px){ .lucky-row{ grid-template-columns:1fr; } .lucky-qr img{ max-width:150px; } }
 
 /* ---------- 탭 ---------- */
 .tabs{ display:flex; gap:6px; padding:6px; border-radius:999px; background:var(--surface); border:1px solid var(--border); width:fit-content; max-width:100%; overflow-x:auto; margin-bottom:22px; }
