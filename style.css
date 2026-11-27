@@ -742,3 +742,6 @@ textarea{ resize:vertical; }
   .trio{ grid-template-columns:1fr; gap:16px; }
   .trio-teams{ max-width:460px; width:100%; margin:0 auto; }
 }
+
+/* 05 대표 소개 제목: 휴대폰에서 줄 끝이 넘치지 않게 (2026-11-27) */
+@media (max-width:860px){ .maker-text h2.founder-title{ font-size:clamp(20px,6.2vw,28px); white-space:nowrap; } }
