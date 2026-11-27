@@ -152,6 +152,11 @@ body{ top:0 !important; }
 .method-steps li{ padding:18px 22px; border-radius:14px; background:rgba(255,255,255,.06); border:1px solid rgba(231,212,164,.18); }
 .method-steps b{ display:block; color:var(--gold-soft); font-family:var(--serif); font-size:16px; }
 .method-steps span{ font-size:14.5px; color:#CFC9DF; }
+.lucky-side{ display:grid; gap:16px; justify-items:center; text-align:center; }
+.lucky-balls{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+.lucky-balls span{ width:48px; height:48px; border-radius:50%; display:grid; place-items:center; font-family:var(--serif); font-size:18px; font-weight:700; color:#1D2147; background:radial-gradient(circle at 35% 30%,#F6E7BF,#D9BC7A 55%,#B08D4C); box-shadow:0 6px 16px rgba(176,141,76,.35); }
+.lucky .btn-block{ max-width:340px; }
+.lucky-note{ margin:0; font-size:13px; color:#BDB7D0; }
 
 /* ---------- 탭 ---------- */
 .tabs{ display:flex; gap:6px; padding:6px; border-radius:999px; background:var(--surface); border:1px solid var(--border); width:fit-content; max-width:100%; overflow-x:auto; margin-bottom:22px; }

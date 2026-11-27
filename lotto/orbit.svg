@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 188" fill="none">
+  <defs>
+    <radialGradient id="haze"><stop stop-color="#f3d581" stop-opacity=".3"/><stop offset="1" stop-color="#eccd79" stop-opacity="0"/></radialGradient>
+    <radialGradient id="planet" cx=".29" cy=".21" r=".83"><stop stop-color="#fbf4e0"/><stop offset=".35" stop-color="#fae4a8"/><stop offset=".76" stop-color="#b18e51"/><stop offset="1" stop-color="#6c5630"/></radialGradient>
+    <linearGradient id="rings" x1="56" y1="170" x2="377" y2="27" gradientUnits="userSpaceOnUse"><stop stop-color="#a2895e" stop-opacity=".15"/><stop offset=".48" stop-color="#f8eed4"/><stop offset="1" stop-color="#dcc890" stop-opacity=".22"/></linearGradient>
+    <clipPath id="sphere"><circle cx="216" cy="93" r="58"/></clipPath>
+  </defs>
+  <ellipse cx="217" cy="97" rx="177" ry="91" fill="url(#haze)"/>
+  <g stroke="#ceb46c" opacity=".36"><circle cx="216" cy="93" r="73" stroke-dasharray="1 5"/><ellipse cx="216" cy="100" rx="160" ry="40" transform="rotate(-17 216 100)"/><path d="M66 105h24m257-20h19M216 4v13m0 151v15"/></g>
+  <circle cx="216" cy="93" r="58" fill="url(#planet)" stroke="#faeabd" stroke-opacity=".62"/>
+  <g clip-path="url(#sphere)" stroke="#fff4d7" opacity=".32"><path d="M142 93c28 7 72-28 139-17m-132 3c44 10 61-37 122-25m-109 8c37-1 54-20 88-21m-96 75c31 6 93-37 124-25m-117 44c38-3 69-18 112-23m-98 35c31 1 61-20 88-19"/><path d="M159 101c34 1 65-31 103-22m-83 52c27-12 52-17 80-23" opacity=".55"/></g>
+  <path d="M112 94c-28 16-47 32-43 43 7 21 80 16 151-5 79-23 151-57 144-74-4-10-22-13-49-10" stroke="url(#rings)" stroke-width="1.25"/>
+  <path d="M93 125c-12 9-11 17 8 18 29 2 72-7 119-21 71-21 130-47 125-61-2-6-12-7-26-6" stroke="url(#rings)" stroke-opacity=".49"/>
+  <g fill="#f4eedc"><path d="M118 37c.8 9 4.3 12.6 13 13.4-8.7.8-12.2 4.4-13 13.6-.8-9.2-4.3-12.8-13-13.6 8.7-.8 12.2-4.4 13-13.4Z"/><path d="M332 107c.6 6.6 3 9.1 9.5 9.7-6.5.6-8.9 3.1-9.5 9.8-.6-6.7-3-9.2-9.5-9.8 6.5-.6 8.9-3.1 9.5-9.7Z"/><circle cx="97" cy="80" r="2"/><circle cx="151" cy="142" r="3.5"/><circle cx="302" cy="35" r="2.5"/><circle cx="296" cy="144" r="1.5"/><circle cx="352" cy="92" r="1.5"/><circle cx="79" cy="116" r="1.5"/><circle cx="182" cy="21" r="1.5"/><circle cx="259" cy="165" r="1.5"/></g>
+  <circle cx="302" cy="35" r="6" stroke="#fff1ca" opacity=".53"/><circle cx="151" cy="142" r="7" stroke="#fff2cf" opacity=".45"/>
+</svg>
