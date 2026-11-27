@@ -30,3 +30,5 @@ section[id]{scroll-margin-top:16px}h1,h2,h3{text-wrap:balance;letter-spacing:nor
 @media(max-width:660px){.brand-text{flex-direction:column;align-items:flex-start;gap:3px;line-height:1.2}.home-go{font-size:11px;padding:3px 9px}}
 /* 운세 뽑기 칸을 첫 화면으로 (2026-11-27) */
 main>.workbench:first-child{margin-top:28px}@media(max-width:660px){main>.workbench:first-child{margin-top:16px}}
+/* 제목 '오늘의 운세와 행운번호 뽑기'를 휴대폰에서 한 줄로 (2026-11-27) */
+@media(max-width:660px){.fortune-top{position:relative;display:block}.fortune-top .date-chip{position:absolute;top:0;right:0}#fortune-title{font-size:clamp(16px,5.4vw,26px);white-space:nowrap}}
