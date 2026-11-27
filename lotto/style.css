@@ -31,4 +31,16 @@ section[id]{scroll-margin-top:16px}h1,h2,h3{text-wrap:balance;letter-spacing:nor
 /* 운세 뽑기 칸을 첫 화면으로 (2026-11-27) */
 main>.workbench:first-child{margin-top:28px}@media(max-width:660px){main>.workbench:first-child{margin-top:16px}}
 /* 제목 '오늘의 운세와 행운번호 뽑기'를 휴대폰에서 한 줄로 (2026-11-27) */
-@media(max-width:660px){.fortune-top{position:relative;display:block}.fortune-top .date-chip{position:absolute;top:0;right:0}#fortune-title{font-size:clamp(16px,5.4vw,26px);white-space:nowrap}}
+/* 제목: 로또공 7개 '오늘의 · 행운번호', 어느 화면에서도 한 줄 (2026-11-27) */
+.fortune-top{position:relative;display:block}.fortune-top .date-chip{position:absolute;top:0;right:0}
+#fortune-title.lotto-title{margin-top:12px;--b:min(52px,calc((100vw - 80px)/8.2))}
+.lotto-title>span{display:flex;flex-wrap:nowrap;align-items:center;gap:calc(var(--b)*.12)}
+.lotto-title .lb{width:var(--b);height:var(--b);flex-shrink:0;border-radius:50%;display:grid;place-items:center;font-size:calc(var(--b)*.44);font-weight:800;line-height:1;letter-spacing:0;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);box-shadow:inset -6px -8px 14px rgba(0,0,0,.22),inset 6px 6px 12px rgba(255,255,255,.45),0 6px 14px rgba(0,0,0,.3)}
+.lotto-title .lb0{background:radial-gradient(circle at 32% 28%,#fff3b0,#f6c533 55%,#d79a0e);color:#5a3d00;text-shadow:none}
+.lotto-title .lb1{background:radial-gradient(circle at 32% 28%,#b9dcff,#4a90e2 55%,#2563b8)}
+.lotto-title .lb2{background:radial-gradient(circle at 32% 28%,#ffb3b3,#e94b4b 55%,#b92a2a)}
+.lotto-title .lb3{background:radial-gradient(circle at 32% 28%,#e3e3e3,#9a9a9a 55%,#6b6b6b)}
+.lotto-title .lb4{background:radial-gradient(circle at 32% 28%,#c4f0b5,#5cbf4a 55%,#3a8f2c)}
+.lotto-title .lb-gap{width:calc(var(--b)*.18);flex-shrink:0}
+/* 아주 좁은 휴대폰: 상단 메뉴 숨김(왼쪽 위 문구와 겹침 방지) */
+@media(max-width:360px){.site-head nav{display:none}}
